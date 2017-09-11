@@ -1,0 +1,246 @@
+FITini 
+
+[Cameras]
+f ProjectionAngle=33.875000
+f PositionX=931.385315
+f PositionY=1524.632324
+f PositionZ=0.000000
+b Ready=TRUE
+uc LightRed=255
+uc LightGreen=255
+uc LightBlue=255
+uc AmbientBlue=31
+uc AmbientGreen=31
+uc AmbientRed=31
+uc DayLightRed=255
+uc DayLightGreen=255
+uc DayLightBlue=255
+uc DayAmbientBlue=31
+uc DayAmbientGreen=31
+uc DayAmbientRed=31
+uc SunsetLightRed=254
+uc SunsetLightGreen=68
+uc SunsetLightBlue=5
+uc NightLightRed=64
+uc NightLightGreen=64
+uc NightLightBlue=64
+uc NightAmbientBlue=32
+uc NightAmbientGreen=32
+uc NightAmbientRed=32
+uc SeenBlue=255
+uc SeenGreen=0
+uc SeenRed=0
+uc BaseBlue=47
+uc BaseGreen=47
+uc BaseRed=47
+f LightDirPitch=22.500000
+f DayLightPitch=22.500000
+f DayToNightTime=-1.000000
+f LightDirYaw=28.750000
+f NewScale=0.611385
+f StartRotation=-22.500000
+f[3] LODScales=1.00, 0.50, 0.30,
+f ElevationAdjustFactor=150.000000
+f ZoomMax=1.000000
+f ZoomMin=0.100000
+f FOVMax=0.000000
+f FOVMin=0.000000
+f FogStart=-1.000000
+f FogFull=-2.000000
+ul FogColor=3932928
+f FogTransparency=1.000000
+l UserMin=0
+l UserMax=0
+l BaseTerrain=30
+
+[Water]
+f Elevation=-1.000000
+f Frequency=4.000000
+f Ampliture=10.000000
+ul AlphaShallow=1056964608
+ul AlphaMiddle=-1358954496
+ul AlphaDeep=-16777216
+f AlphaDepth=0.000000
+f ShallowDepth=0.000000
+
+[Terrain]
+l UserMin=0
+l UserMax=0
+
+[Warriors]
+ul NumWarriors=3
+
+[Parts]
+ul NumParts=3
+b AlliedTeam=TRUE
+
+[Warrior1]
+st Profile="pmwbubba"
+st Brain="PBrain"
+l NumCells=0
+l NumStaticVars=0
+
+[Part1]
+ul ObjectNumber=48
+ul ControlType=2
+b PlayerPart=TRUE
+c MyIcon=0
+c TeamID=0
+c CommanderID=0
+ul Pilot=1
+f PositionX=192.000000
+f PositionY=448.000000
+f Rotation=0.000000
+l Active=1
+l Exists=1
+ul BaseColor=0
+ul HighlightColor1=0
+ul HighlightColor2=0
+ul ControlDataType=1
+st ObjectProfile="PM207300"
+st CSVFile="Raven"
+ul VariantNumber=3833
+ul SquadNum=1
+ul NumAlternatives=0
+ul AlternativeStartIndex=5
+l[15] IndicesOfAlternatives=-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+
+[Warrior2]
+st Profile="PMWGreen"
+st Brain="DredAttack01"
+l NumCells=3
+l NumStaticVars=0
+
+[Warrior2Cell0]
+l Cell=2
+l MemType=1
+f Value=150.000000
+
+[Warrior2Cell1]
+l Cell=9
+l MemType=0
+f Value=0.000000
+
+[Warrior2Cell2]
+l Cell=28
+l MemType=0
+f Value=0.000000
+
+[Part2]
+ul ObjectNumber=412
+ul ControlType=2
+b PlayerPart=FALSE
+c MyIcon=0
+c TeamID=1
+c CommanderID=1
+ul Pilot=2
+f PositionX=1088.000000
+f PositionY=-1344.000000
+f Rotation=0.000000
+l Active=1
+l Exists=1
+ul BaseColor=0
+ul HighlightColor1=0
+ul HighlightColor2=0
+ul ControlDataType=2
+st ObjectProfile="pv20500"
+st CSVFile="MOG"
+ul VariantNumber=0
+ul SquadNum=3
+ul NumAlternatives=0
+ul AlternativeStartIndex=6
+l[15] IndicesOfAlternatives=-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+
+[Warrior3]
+st Profile="pmwbubba"
+st Brain="PBrain"
+l NumCells=0
+l NumStaticVars=0
+
+[Part3]
+ul ObjectNumber=51
+ul ControlType=2
+b PlayerPart=TRUE
+c MyIcon=0
+c TeamID=0
+c CommanderID=0
+ul Pilot=3
+f PositionX=320.000000
+f PositionY=277.333008
+f Rotation=0.000000
+l Active=1
+l Exists=1
+ul BaseColor=0
+ul HighlightColor1=0
+ul HighlightColor2=0
+ul ControlDataType=1
+st ObjectProfile="PM207300"
+st CSVFile="Atlas"
+ul VariantNumber=3917
+ul SquadNum=5
+ul NumAlternatives=0
+ul AlternativeStartIndex=7
+l[15] IndicesOfAlternatives=-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,
+
+[Teams]
+b AlliedTeam=FALSE
+
+[Commander0Group:0]
+l[12] Mates=1,3,0,0,0,0,0,0,0,0,0,0,
+
+[Commander1Group:0]
+l[12] Mates=2,0,0,0,0,0,0,0,0,0,0,0,
+
+[NavMarkers]
+ul NumNavMarkers=0
+
+[Artillery]
+l NumLargeStrikes=0
+l NumSmallStrikes=0
+l NumSensorStrikes=0
+l NumCameraStrikes=0
+
+[MissionSettings]
+st MissionName=""
+st Author=""
+st Blurb=""
+f TimeLimit=-1.000000
+l ResourcePoints=100000
+ul IsSinglePlayer=0
+ul MaximumNumberOfTeams=2
+ul MaximumNumberOfPlayers=2
+uc scenarioTuneNum=0
+
+[Objectives Version]
+ul Version=3
+
+[Team0Objectives]
+ul NumObjectives=0
+
+[Team1Objectives]
+ul NumObjectives=0
+
+[Team2Objectives]
+ul NumObjectives=0
+
+[Team3Objectives]
+ul NumObjectives=0
+
+[Team4Objectives]
+ul NumObjectives=0
+
+[Team5Objectives]
+ul NumObjectives=0
+
+[Team6Objectives]
+ul NumObjectives=0
+
+[Team7Objectives]
+ul NumObjectives=0
+
+[Music]
+uc scenarioTuneNum=0
+
+[Script]
+st ScenarioScript="m0101"
+FITend 
