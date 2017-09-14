@@ -560,7 +560,9 @@ order coreAttackTactic (integer targetID, integer params, integer tactic, @integ
 		real				Range;
 		real				Angle;
 		integer				curTacCode;
-		static integer[15]	tacOrderParams;
+        //sebi:
+		static integer[19]	tacOrderParams;
+		//static integer[15]	tacOrderParams;
 		real				time;
 		integer				targetClass;
 		real				MinWeaponRange;

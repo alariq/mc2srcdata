@@ -1289,7 +1289,9 @@ function AttackWithTactic(integer TargetID);
 		real		Range;
 		real		Angle;
 		integer				curTacCode;
-		static integer[15]	tacOrderParams;
+        //sebi:
+		static integer[19]	tacOrderParams;
+		//static integer[15]	tacOrderParams;
 		real				time;
 		integer		TargetClass;
 		real		MinWeaponRange;

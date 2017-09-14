@@ -76,7 +76,9 @@ var
 
 	integer				curTacCode;
 	integer				lastTacCode;
-	static integer[15]	tacOrderParams;
+    //sebi: see c++ code execGetTacOrder
+	static integer[19]	tacOrderParams;
+	//static integer[15]	tacOrderParams;
 	real				time;
 	static integer	StopCounter;
 	static real		StopTime;
