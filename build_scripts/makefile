@@ -1,3 +1,5 @@
+FST_TARGETS = art.fst mission.fst camera.fst effect.fst insignia.fst misc.fst textures.fst tgl.fst
+
 art.fst:
 	./makefst -f art.fst -p ../art/ -m data/art
 
@@ -22,5 +24,15 @@ textures.fst:
 tgl.fst: # actually neds to excude 'arm' folder
 	./makefst -f tgl.fst -p ../tgl/ -m data/tgl
 
-all: art.fst mission.fst camera.fst effect.fst insignia.fst misc.fst textures.fst tgl.fst makefst
+
+ALL_TARGETS = $(FST_TARGETS)
+
+include sound.mk
+
+
+clean:
+	rm -f $(ALL_TARGETS)
+
+all: $(ALL_TARGETS)
+
 
