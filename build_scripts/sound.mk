@@ -1,6 +1,7 @@
 SOUNDS_INPUT = ..$(PATH_SEPARATOR)sound
 SOUNDS_OUTPUT = $(DST_DATA_ROOT)$(PATH_SEPARATOR)sound
 
+# see https://www.gnu.org/software/make/manual/html_node/Flavors.html#Flavors for changing this to := instead
 SOUND_TARGETS = $(addprefix $(SOUNDS_OUTPUT)$(PATH_SEPARATOR), pilota.pak pilotb.pak pilotc.pak pilotd.pak pilote.pak pilotf.pak pilotg.pak piloth.pak piloti.pak pilotj.pak pilotk.pak pilotl.pak pilotm.pak pilotn.pak piloto.pak pilotp.pak pilotq.pak pilotr.pak pilots.pak pilott.pak pilotu.pak pilotv.pak pilotw.pak pilotx.pak piloty.pak pilotz.pak pilot1a.pak pilot1b.pak pilot1c.pak pilot1d.pak betty.pak sound.pak support.pak)
 
 SRC_WAV_FILES = $(wildcard $(addprefix $(SOUNDS_INPUT)/, tut*.wav))
@@ -22,9 +23,21 @@ $(SOUNDS_OUTPUT):
 print_target:
 	echo $(DST_WAV_FILES)
 
+
+
+ifeq ($(BUILD_PLATFORM), linux)
+
+$(SOUNDS_OUTPUT)$(PATH_SEPARATOR)%.wav: $(SOUNDS_INPUT)$(PATH_SEPARATOR)%.wav
+	$(COPY)  $< $@
+
+else
+
 # I do not know why do I need to escape path separator (only on windows though), but it does not work otherwise, even though dependency need only one path separator
 $(SOUNDS_OUTPUT)$(PATH_SEPARATOR)$(PATH_SEPARATOR)%.wav: $(SOUNDS_INPUT)$(PATH_SEPARATOR)%.wav
 	$(COPY)  $< $@
+
+endif
+
 
 $(SOUND_TARGETS) : | $(SOUNDS_OUTPUT)
 
