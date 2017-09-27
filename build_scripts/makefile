@@ -1,38 +1,13 @@
-FST_TARGETS = art.fst mission.fst camera.fst effect.fst insignia.fst misc.fst textures.fst tgl.fst
-
-art.fst:
-	./makefst -f art.fst -p ../art/ -m data/art
-
-mission.fst:
-	./makefst -f mission.fst -p ../missions/ -m data/missions
-
-camera.fst:
-	./makefst -f camera.fst -p ../cameras/ -m data/cameras
-
-effect.fst:
-	./makefst -f effect.fst -p ../effects/ -m data/effects
-
-insignia.fst:
-	./makefst -f insignia.fst -p ../multiplayer/insignia/ -m data/multiplayer/insignia
-
-misc.fst: ../misc.rsp
-	./makefst -f misc.fst -p .. -rsp ../misc.rsp -m data
-
-textures.fst:
-	./makefst -f textures.fst -p ../textures/ -m data/textures
-
-tgl.fst: # actually neds to excude 'arm' folder
-	./makefst -f tgl.fst -p ../tgl/ -m data/tgl
+include config.mk
 
 
-ALL_TARGETS = $(FST_TARGETS)
-
+include fst.mk
 include sound.mk
-
-
-clean:
-	rm -f $(ALL_TARGETS)
 
 all: $(ALL_TARGETS)
 
+.PHONY : clean
+
+clean:
+	$(RM) $(ALL_TARGETS)
 

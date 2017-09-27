@@ -1,9 +1,9 @@
-SOUNDS_INPUT = ../sound
-SOUNDS_OUTPUT := sound
+SOUNDS_INPUT = ..$(PATH_SEPARATOR)sound
+SOUNDS_OUTPUT = $(DST_DATA_ROOT)$(PATH_SEPARATOR)sound
 
-SOUND_TARGETS = $(addprefix $(SOUNDS_OUTPUT)/, pilota.pak pilotb.pak pilotc.pak pilotd.pak pilote.pak pilotf.pak pilotg.pak piloth.pak piloti.pak pilotj.pak pilotk.pak pilotl.pak pilotm.pak pilotn.pak piloto.pak pilotp.pak pilotq.pak pilotr.pak pilots.pak pilott.pak pilotu.pak pilotv.pak pilotw.pak pilotx.pak piloty.pak pilotz.pak pilot1a.pak pilot1b.pak pilot1c.pak pilot1d.pak betty.pak sound.pak support.pak)
+SOUND_TARGETS = $(addprefix $(SOUNDS_OUTPUT)$(PATH_SEPARATOR), pilota.pak pilotb.pak pilotc.pak pilotd.pak pilote.pak pilotf.pak pilotg.pak piloth.pak piloti.pak pilotj.pak pilotk.pak pilotl.pak pilotm.pak pilotn.pak piloto.pak pilotp.pak pilotq.pak pilotr.pak pilots.pak pilott.pak pilotu.pak pilotv.pak pilotw.pak pilotx.pak piloty.pak pilotz.pak pilot1a.pak pilot1b.pak pilot1c.pak pilot1d.pak betty.pak sound.pak support.pak)
 
-SRC_WAV_FILES += $(wildcard $(addprefix $(SOUNDS_INPUT)/, tut*.wav))
+SRC_WAV_FILES = $(wildcard $(addprefix $(SOUNDS_INPUT)/, tut*.wav))
 SRC_WAV_FILES += $(wildcard $(addprefix $(SOUNDS_INPUT)/, mc2_*.wav))
 SRC_WAV_FILES += $(wildcard $(addprefix $(SOUNDS_INPUT)/, music*.wav))
 SRC_WAV_FILES += $(wildcard $(addprefix $(SOUNDS_INPUT)/, v*.wav))
@@ -11,19 +11,20 @@ SRC_WAV_FILES += $(wildcard $(addprefix $(SOUNDS_INPUT)/, w*.wav))
 
 DST_WAV_FILES := $(patsubst $(SOUNDS_INPUT)%, $(SOUNDS_OUTPUT)%, $(SRC_WAV_FILES))
 
+# will essentially do nothing if PATH_SEPARATOR = /
+DST_WAV_FILES := $(subst /,$(PATH_SEPARATOR),$(DST_WAV_FILES))
+
 SOUND_TARGETS += $(DST_WAV_FILES)
 
-
 $(SOUNDS_OUTPUT):
-	mkdir $(SOUNDS_OUTPUT)
+	$(MKDIR) $(SOUNDS_OUTPUT)
 
+print_target:
+	echo $(DST_WAV_FILES)
 
-#print_target:
-#	print $(DST_WAV_FILES)
-
-
-$(SOUNDS_OUTPUT)/%.wav: $(SOUNDS_INPUT)/%.wav
-	cp  $< $@
+# I do not know why do I need to escape path separator (only on windows though), but it does not work otherwise, even though dependency need only one path separator
+$(SOUNDS_OUTPUT)$(PATH_SEPARATOR)$(PATH_SEPARATOR)%.wav: $(SOUNDS_INPUT)$(PATH_SEPARATOR)%.wav
+	$(COPY)  $< $@
 
 $(SOUND_TARGETS) : | $(SOUNDS_OUTPUT)
 
@@ -131,7 +132,7 @@ $(SOUNDS_OUTPUT)/sound.pak: $(SOUNDS_INPUT)/sound.rsp
 $(SOUNDS_OUTPUT)/support.pak: $(SOUNDS_INPUT)/support.rsp
 	./pak -f $@ -r $<
 
-all: $(SOUND_TARGETS) 
+#all: $(SOUND_TARGETS) 
 
 ALL_TARGETS += $(SOUND_TARGETS)
 
