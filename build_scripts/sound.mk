@@ -24,7 +24,6 @@ print_target:
 	echo $(DST_WAV_FILES)
 
 
-
 ifeq ($(BUILD_PLATFORM), linux)
 
 $(SOUNDS_OUTPUT)$(PATH_SEPARATOR)%.wav: $(SOUNDS_INPUT)$(PATH_SEPARATOR)%.wav
