@@ -1,4 +1,4 @@
-FST_TARGETS = art.fst mission.fst camera.fst effect.fst insignia.fst misc.fst textures.fst tgl.fst
+FST_TARGETS = art.fst mission.fst camera.fst effect.fst insignia.fst misc.fst textures.fst
 
 art.fst:
 	./makefst -f art.fst -p $(SRC_DATA_ROOT)/art/ -m data/art
@@ -21,9 +21,14 @@ misc.fst: ../misc.rsp
 textures.fst:
 	./makefst -f textures.fst -p $(SRC_DATA_ROOT)/textures/ -m data/textures
 
-tgl.fst: # actually needs to exclude 'arm' folder
-	./makefst -f tgl.fst -p $(SRC_DATA_ROOT)/tgl/ -m data/tgl
+FST_CLEAN_TARGETS = fst_clean
 
+.PHONY: $(FST_CLEAN_TARGETS)
 
-ALL_TARGETS = $(FST_TARGETS)
+fst_clean:
+	$(RM) $(FST_TARGETS)
+
+ALL_TARGETS += $(FST_TARGETS)
+ALL_CLEAN_TARGETS += $(FST_CLEAN_TARGETS)
+
 

@@ -1,13 +1,15 @@
 include config.mk
 
-
 include fst.mk
+include tgl.mk
 include sound.mk
 
 all: $(ALL_TARGETS)
 
 .PHONY : clean
 
-clean:
-	$(RM) $(ALL_TARGETS)
+output_clean_targets:
+	echo $(ALL_CLEAN_TARGETS)
+
+clean: output_clean_targets $(ALL_CLEAN_TARGETS)
 
