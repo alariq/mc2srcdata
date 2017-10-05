@@ -2,7 +2,7 @@ TGL_TARGETS = tgl.fst
 
 .PHONY: ase2tgl tgl_clean
 
-ase2tgl: $(SRC_DATA_ROOT)/tgl/*.ini  $(SRC_DATA_ROOT)/tgl/*.ase
+ase2tgl: $(SRC_DATA_ROOT)/tgl/*.ini  $(SRC_DATA_ROOT)/tgl/*.ase 
 	./aseconv -prefix-path $(SRC_DATA_ROOT)/tgl/ -dst-path $(SRC_DATA_ROOT)/tgl/
 	$(TOUCH) ase2tgl
 
