@@ -47,6 +47,8 @@ else
 $(SOUNDS_OUTPUT)$(PATH_SEPARATOR)$(PATH_SEPARATOR)%.wav: $(SOUNDS_INPUT)$(PATH_SEPARATOR)%.wav
 	$(COPY)  $< $@
 
+endif
+
 $(ALL_SOUND_TARGETS) : | $(SOUNDS_OUTPUT)
 
 # could use this shortcut, but somebody though that it was a good idea to name packs fifferently from source rps files!

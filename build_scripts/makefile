@@ -3,6 +3,7 @@ include config.mk
 include fst.mk
 include tgl.mk
 include sound.mk
+include object.mk
 
 all: $(ALL_TARGETS)
 
