@@ -2,7 +2,7 @@ ifeq ($(BUILD_PLATFORM), linux)
 	COPY = cp
 	MKDIR = mkdir
 	RM = rm -f
-	RMDIR = rmdir -f
+	RMDIR = rmdir
 	TOUCH = touch
 	PATH_SEPARATOR2=/
 else
@@ -16,10 +16,11 @@ else
 	PATH_SEPARATOR2=\ # space on purpose!
 endif
 
-SRC_DATA_ROOT = ..
-DST_DATA_ROOT = .
 
 ALL_TARGETS = 
 #ALL_CLEAN_TARGETS = 
 
 PATH_SEPARATOR=$(strip $(PATH_SEPARATOR2))
+
+SRC_DATA_ROOT = ..
+DST_DATA_ROOT = .$(PATH_SEPARATOR)data
