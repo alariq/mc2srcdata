@@ -5,6 +5,7 @@ include tgl.mk
 include sound.mk
 include object.mk
 include movie.mk
+include other.mk
 
 all: $(ALL_TARGETS)
 
