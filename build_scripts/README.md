@@ -11,3 +11,14 @@ You need to build data tools from mc2 repository. And copy executeables in `buil
 * Linux:
 
 `make all BUILD_PLATFORM=linux`
+
+
+# How to clean data:
+
+* Windows (GNU Make required):
+
+`make clean`
+
+* Linux:
+
+`make clean BUILD_PLATFORM=linux`

@@ -28,7 +28,7 @@ sounds_clean:
 	$(RM) $(SOUND_CLEAN_TARGETS)
 	$(RMDIR) $(SOUNDS_OUTPUT)
 
-$(SOUNDS_OUTPUT):
+$(SOUNDS_OUTPUT): | $(DST_DATA_ROOT)
 	$(MKDIR) $(SOUNDS_OUTPUT)
 
 print_target:
