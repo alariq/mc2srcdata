@@ -1,4 +1,4 @@
-FONTS_TARGETS = $(addprefix $(FONTS_OUTPUT)$(PATH_SEPARATOR), arial8.bmp arial9game.bmp arial9chat.bmp arialnarrow8.bmp arialnarrow9.bmp arialblack9.bmp agencyfb8.bmp agencyfb11.bmp agencyfb14.bmp agencyfb20.bmp arialnarrow6.bmp)
+FONTS_TARGETS = $(addprefix $(FONTS_OUTPUT)$(PATH_SEPARATOR), arial8.bmp arial9game.bmp arial9chat.bmp arialnarrow8.bmp arialnarrow9.bmp arialblack9.bmp agencyfb8.bmp agencyfb11.bmp agencyfb14.bmp agencyfb17.bmp agencyfb20.bmp arialnarrow6.bmp)
 
 FONTS_GLYPH_FILES = $(patsubst %.bmp,%.glyph,$(FONTS_TARGETS))
 
@@ -42,6 +42,9 @@ $(FONTS_OUTPUT)$(PATH_SEPARATOR)agencyfb11.bmp: $(SRC_DATA_ROOT)/fonts/emulogic.
 
 $(FONTS_OUTPUT)$(PATH_SEPARATOR)agencyfb14.bmp: $(SRC_DATA_ROOT)/fonts/Mecha.ttf
 	./text_tool $(SRC_DATA_ROOT)/fonts/Mecha.ttf 14 $(FONTS_OUTPUT)/agencyfb14
+
+$(FONTS_OUTPUT)$(PATH_SEPARATOR)agencyfb17.bmp: $(SRC_DATA_ROOT)/fonts/Mecha.ttf
+	./text_tool $(SRC_DATA_ROOT)/fonts/Mecha.ttf 14 $(FONTS_OUTPUT)/agencyfb17
 
 $(FONTS_OUTPUT)$(PATH_SEPARATOR)agencyfb20.bmp: $(SRC_DATA_ROOT)/fonts/Mecha.ttf
 	./text_tool $(SRC_DATA_ROOT)/fonts/Mecha.ttf 14 $(FONTS_OUTPUT)/agencyfb20
