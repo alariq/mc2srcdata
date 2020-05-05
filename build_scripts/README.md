@@ -22,3 +22,15 @@ You need to build data tools from mc2 repository. And copy executeables in `buil
 * Linux:
 
 `make clean BUILD_PLATFORM=linux`
+
+
+# Move data to where you've build a game
+
+You'll need to copy next files:
+
+* data
+* assets
+* \*.cfg
+* \*.fst
+
+
