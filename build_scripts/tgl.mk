@@ -7,7 +7,7 @@ ase2tgl: $(SRC_DATA_ROOT)/tgl/*.ini  $(SRC_DATA_ROOT)/tgl/*.ase
 	$(TOUCH) ase2tgl
 
 tgl.rsp: ase2tgl
-	./makersp -rsp tgl.rsp -p $(SRC_DATA_ROOT) -w tgl/*.tgl -w tgl/*.agl -w tgl/128/*.tga -w tgl/*.ini
+	./makersp -rsp tgl.rsp -p $(SRC_DATA_ROOT) -w tgl/\*.tgl -w tgl/\*.agl -w tgl/128/\*.tga -w tgl/\*.ini
 
 tgl.fst: tgl.rsp
 	./makefst -f tgl.fst -p $(SRC_DATA_ROOT) -rsp tgl.rsp -m data
