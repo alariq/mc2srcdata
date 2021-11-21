@@ -3,6 +3,12 @@
 * Prerequisites:
 
 You need to build data tools from mc2 repository. And copy executeables in `build_scripts` folder.
+Those are the necessary tools (they are built along with a game, so no additional actions should not be taken):
+ - aseconv
+ - makefst
+ - makersp
+ - pak
+ - text\_tool
 
 * Windows (GNU Make required):
 
