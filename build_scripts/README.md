@@ -1,6 +1,6 @@
-# How to build data:
+# How to build game data:
 
-* Prerequisites:
+## Prerequisites
 
 You need to build data tools from mc2 repository. And copy executeables in `build_scripts` folder.
 Those are the necessary tools (they are built along with a game, so no additional actions should not be taken):
@@ -9,6 +9,8 @@ Those are the necessary tools (they are built along with a game, so no additiona
  - makersp
  - pak
  - text\_tool
+
+## Building
 
 * Windows (GNU Make required):
 
@@ -19,7 +21,7 @@ Those are the necessary tools (they are built along with a game, so no additiona
 `make all BUILD_PLATFORM=linux`
 
 
-# How to clean data:
+## How to clean data:
 
 * Windows (GNU Make required):
 
@@ -30,7 +32,7 @@ Those are the necessary tools (they are built along with a game, so no additiona
 `make clean BUILD_PLATFORM=linux`
 
 
-# Move data to where you've build a game
+## Move data to where you've build a game
 
 You'll need to copy next files to the game directory:
 
