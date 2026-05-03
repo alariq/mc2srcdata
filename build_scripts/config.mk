@@ -4,6 +4,7 @@ ifeq ($(BUILD_PLATFORM), linux)
 	RM = rm -f
 	RMDIR = rmdir
 	TOUCH = touch
+	FFMPEG=ffmpeg
 	PATH_SEPARATOR2=/
 else
 	COPY = copy /Y
@@ -11,6 +12,7 @@ else
 	RM = del /Q
 	RMDIR = rmdir
 	TOUCH = echo >
+	FFMPEG=ffmpeg
 	# ok, here is what heppens here: \ - acts as "keep on same line" for make, but because I put a space here, it is not anymore (I've put a comment to signify this)
 	# then we just strip it, this way we do not need to escape \ by one more \ (i.e. \\)
 	PATH_SEPARATOR2=\ # space on purpose!
