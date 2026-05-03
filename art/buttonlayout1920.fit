@@ -3069,15 +3069,15 @@ l VHeight = 10
 
 l VideoStaticCount = 4
 
-l left = 1180
-l right = 1308
+l left = 1500
+l right = 1628
 l top = 5
 l bottom = 77
 
 
 
 [VideoStatic0] // frame top
-l XLocation = 1467
+l XLocation = 1787
 l YLocation = 0
 l Width = 128
 l Height = 5
@@ -3095,7 +3095,7 @@ l VHeight = 5
 
 [VideoStatic1] // frame bottom
 
-l XLocation = 1467
+l XLocation = 1787
 l YLocation = 77
 l Width = 128
 l Height = 5
@@ -3112,7 +3112,7 @@ l VHeight = 5
 
 [VideoStatic2] // frame left
 
-l XLocation = 1444
+l XLocation = 1764
 l YLocation = 0
 l Width = 23
 l Height = 82
@@ -3128,7 +3128,7 @@ l VHeight = 82
 
 [VideoStatic3] // frame right
 
-l XLocation = 1595
+l XLocation = 1915
 l YLocation = 0
 l Width = 5
 l Height = 82
@@ -3145,7 +3145,7 @@ l VHeight = 82
 [VideoTextBox] // Text gets centered in this box- arialnarrow8 all caps
 
 l left = 1467
-l right = 1594
+l right = 1914
 l top = 63
 l bottom = 76
 
