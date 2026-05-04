@@ -8,13 +8,16 @@ DST_MOVIE_FILES := $(patsubst $(MOVIE_INPUT)%, $(MOVIE_OUTPUT)%, $(SRC_MOVIE_FIL
 DST_MOVIE_FILES := $(subst /,$(PATH_SEPARATOR),$(DST_MOVIE_FILES))
 
 SRC_VIDEOS = $(wildcard $(addprefix $(MOVIE_INPUT)/, *.mp4))
+SRC_VIDEOS := $(subst /,$(PATH_SEPARATOR),$(SRC_VIDEOS))
 DST_VIDEOS = $(SRC_VIDEOS:.mp4=.mpg)
 DST_VIDEOS := $(patsubst $(MOVIE_INPUT)%, $(MOVIE_OUTPUT)%, $(DST_VIDEOS))
 
 ALL_MOVIE_TARGETS = $(DST_MOVIE_FILES) $(DST_VIDEOS)
 
-$(info VALUE of VAR is $(DST_VIDEOS))
-$(info VALUE of VAR is $(DST_MOVIE_FILES))
+#$(info List of DST_VIDEOS is $(DST_VIDEOS))
+#$(info List of DST_MOVIE_FILES is $(DST_MOVIE_FILES))
+#$(info ffmpeg location -  $(FFMPEG))
+#$(info Movie targets -  $(ALL_MOVIE_TARGETS))
 
 .PHONY: movie_clean
 
@@ -41,7 +44,7 @@ $(MOVIE_OUTPUT)$(PATH_SEPARATOR)$(PATH_SEPARATOR)%.tga: $(MOVIE_INPUT)$(PATH_SEP
 	$(COPY)  $< $@
 
 $(MOVIE_OUTPUT)$(PATH_SEPARATOR)$(PATH_SEPARATOR)%.mpg: $(MOVIE_INPUT)$(PATH_SEPARATOR)%.mp4
-	ffmpeg -i $< -c:v mpeg1video -q:v 0 -c:a mp2 -b:a 224k -r 24 -format mpeg $@
+	$(FFMPEG) -i $< -c:v mpeg1video -q:v 0 -c:a mp2 -b:a 224k -r 24 -format mpeg $@
 
 endif
 

@@ -10,6 +10,9 @@ Those are the necessary tools (they are built along with a game, so no additiona
  - pak
  - text\_tool
 
+## Dependencies
+ * `ffmpeg` is used to convert movies. You should have it in the Path environment or just puch absolute path in `config.mk`
+
 ## Building
 
 * Windows (GNU Make required):
@@ -40,6 +43,7 @@ You'll need to copy next files to the game directory:
 * assets
 * \*.cfg
 * \*.fst
+* testtxm.tga
 
 After this game directory should have following structure:
 
@@ -65,24 +69,11 @@ After this game directory should have following structure:
     ├── minprefs.cfg
     ├── misc.fst
     ├── mission.fst
-    ├── options.cfg
-    ├── orgprefs.cfg
     ├── prefs.cfg
     ├── shaders
     │   ├── gos_text.frag
     │   ├── gos_text.vert
-    │   ├── gos_tex_vertex.frag
-    │   ├── gos_tex_vertex_lighted.frag
-    │   ├── gos_tex_vertex_lighted.vert
-    │   ├── gos_tex_vertex.vert
-    │   ├── gos_vertex.frag
-    │   ├── gos_vertex_lighted.frag
-    │   ├── gos_vertex_lighted.vert
-    │   ├── gos_vertex.vert
-    │   ├── include
-    │   ├── object_tex.frag
-    │   └── object_tex.vert
-    ├── sniff.dat
+    │   └── ...
     ├── system.cfg
     ├── testtxm.tga
     ├── textures.fst
